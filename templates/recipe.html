@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center">{{ recipe.title }}</h1>
+
+    <div class="text-center mt-4">
+        <img src="{{ url_for('static', filename='files/' + recipe.file) }}" class="img-fluid rounded"
+             alt="Recipe Image">
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3 text-center">
+            <div class="mb-2">
+                <i class="far fa-clock"></i>
+                <span class="mr-2">{{ recipe.cooking_time }} minutes</span>
+                <i class="fas fa-utensils"></i>
+                <span class="mr-2">{{ recipe.calories }} calories (per serving)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <h3>Description</h3>
+        <p class="lead">{{ recipe.description }}</p>
+    </div>
+
+    <div class="mt-4">
+        <h3>Ingredients</h3>
+        <ul class="list-group">
+            <li class="list-group-item">{{ recipe.ingredients }}</li>
+        </ul>
+    </div>
+
+    <div class="mt-4">
+        <h3>Instructions</h3>
+        <ol class="list-group">
+            <li class="list-group-item">{{ recipe.instructions }}</li>
+        </ol>
+    </div>
+
+    {% endblock %}

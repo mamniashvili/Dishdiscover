@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    h1 {
+        text-align: center;
+    }
+</style>
+<div class="container-md">
+    <div class="card mb-3 mt-5" style="max-width: 3500px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/static/files/christmas-cookies-high-res-stock-photography-88179329-1542385322.jpg"
+                     class="img-fluid rounded-start" alt="Image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Holiday Specials</h5>
+                    <p class="card-text">Happy New Year! 🎉 As you celebrate this joyous occasion with your loved ones,
+                        we've curated the absolute
+                        best selection of delightful holiday snacks for you to share with your favorite people. We're
+                        thrilled to bring you these tasty treats, and we hope they add an extra spark of joy to your
+                        festivities! Enjoy every
+                        delicious moment! 🌟</p>
+                    <a class="btn btn-primary me-2 fancy-btn" href="{{ url_for('holiday_specials') }}">Click here to see
+                        the recipes!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Explore more categories!</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+        <div class="col">
+            <div class="card h-100">
+                <img src="/static/files/2548301_QFSHe_646_0_0_0-fbd2a27e126942c8b33dbc3d696b0501.jpg"
+                     class="card-img-top" alt=":(">
+                <div class="card-body">
+                    <h5 class="card-title">Main Courses</h5>
+                    <p class="card-text">Elevate your dining experience with our exquisite selection of main courses.
+                        From succulent grilled meats to
+                        flavorful vegetarian options, our main courses promise to satisfy your cravings. Discover a
+                        world of
+                        culinary delights that will tantalize your taste buds and bring joy to every meal. Explore the
+                        richness of
+                        our main course collection and embark on a gastronomic journey with us!</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary me-2 fancy-btn" href="{{ url_for('main_course') }}">Click here to
+                        explore!</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="/static/files/Chocolate-Lasagna-6.jpg"
+                     class="card-img-top" alt=":(">
+                <div class="card-body">
+                    <h5 class="card-title">Desserts</h5>
+                    <p class="card-text">Savor the sweetness of life with our irresistible desserts! Indulge in
+                        delightful creations that promise pure joy in every bite. From decadent chocolates to fruity
+                        delights, our dessert collection is a treat for your taste buds. Elevate your dessert game and
+                        make every moment memorable. Explore our recipes for a journey into the world of sweet
+                        delights!</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary me-2 fancy-btn" href="{{ url_for('desserts') }}">Click here to
+                        explore!</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="/static/files/bbq-appetizers.jpg" class="card-img-top" alt=":(">
+                <div class="card-body">
+                    <h5 class="card-title">Appetizers</h5>
+                    <p class="card-text">
+                        Appetizers, often known as starters, are delightful bite-sized dishes designed to tantalize your
+                        taste buds and spark your appetite. These flavorful pre-meal treats come in a variety of forms,
+                        from crispy finger foods to savory dips, setting the perfect tone for a delicious dining
+                        experience. Explore the world of appetizers and elevate your culinary journey with these
+                        enticing and satisfying small bites.</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary me-2 fancy-btn" href="{{ url_for('appetizers') }}">Click here to
+                        explore!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+

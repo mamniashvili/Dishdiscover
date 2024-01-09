@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff85a2;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #ff85a2;
+            font-weight: bold;
+        }
+
+        .form-control {
+            border: 2px solid #ff85a2;
+            border-radius: 5px;
+            padding: 10px;
+            color: #495057;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 0.2rem rgba(255, 133, 162, 0.25);
+        }
+
+        .text-danger {
+            color: #dc3545;
+            margin-top: 5px;
+        }
+
+        .btn-primary {
+            background-color: #ff85a2;
+            border-color: #ff85a2;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: #e05b7f;
+            border-color: #e05b7f;
+        }
+
+        .custom-file-label {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .custom-file-input {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Recipe</h1>
+    <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe.id) }}" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+
+        <div>
+            {{ form.title(class="form-control", placeholder="please enter the recipe title.")}}
+            {% for error in form.title.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div>
+            {{ form.file(class="form-control", placeholder="please provide a picture of recipe.")}}
+            {% for error in form.file.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div>
+            {{ form.description(class="form-control", placeholder="please enter the recipe description.")}}
+            {% for error in form.description.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div>
+            {{ form.cooking_time(class="form-control", placeholder="please enter the recipe cooking time") }}
+            {% for error in form.cooking_time.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div>
+            {{ form.calories(class="form-control", placeholder="please enter how many calories your recipe contains..") }}
+            {% for error in form.calories.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+         <div>
+            {{ form.ingredients(class="form-control", placeholder="provide the ingredients you've used for your recipe.")}}
+            {% for error in form.ingredients.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+         <div>
+            {{ form.instructions(class="form-control", placeholder="enter how you made the recipe step by step") }}
+            {% for error in form.instructions.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div>
+            {{ form.Category() }}
+        </div>
+
+        <div>
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+
+</body>
+</html>

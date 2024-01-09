@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    h1 {
+        text-align: center;
+    }
+     .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+</style>
+<h1>Desserts</h1>
+<div class="container">
+    <div class="row"> {% for recipe in recipes %}
+        <div class="col-md-4 mt-4"> {% include "recipecard.html" %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
